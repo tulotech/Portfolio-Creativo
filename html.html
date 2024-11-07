@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Portfolio creativo que presenta mis trabajos en fotografía, diseño gráfico y arte. Explora mis proyectos más destacados.">
+    <meta name="keywords" content="portfolio, creativo, fotografía, diseño gráfico, arte, proyectos">
+    <title>Mi Portfolio Creativo</title>
+
+    <!-- Preconnect para fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fuentes externas -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="faviconBlack.ico" type="image/x-icon">
+
+    <!-- Enlace a los iconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Diseño global */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Estilo del encabezado */
+        header {
+            background: linear-gradient(135deg, #4f4f4f, #2e2e2e);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.4rem;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+
+        /* Contenedor de la galería */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 50px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Estilo de cada ítem de la galería */
+        .gallery-item {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 300px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            opacity: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 4px solid #f4f4f4;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .info {
+            padding: 25px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-item:hover .info {
+            background-color: #1a1a1a;
+        }
+
+        .info h3 {
+            font-size: 1.8rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info p {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.85;
+        }
+
+        /* Estilo del pie de página */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            width: 100%;
+            margin-top: 50px;
+            box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: white;
+            font-size: 1.4rem;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #2e2e2e;
+        }
+
+        /* Sección de texto */
+        .text-section {
+            padding: 50px 20px;
+            background-color: #fff;
+            color: #333;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin: 50px 0;
+        }
+
+        .text-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .text-section p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Animación de entrada */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery-item {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            .gallery-item {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mi Portfolio Creativo</h1>
+    <p>Explora mi trabajo artístico, fotografía y diseño gráfico.</p>
+</header>
+
+<div class="gallery-container">
+    <!-- Primer Proyecto -->
+    <div class="gallery-item">
+        <img src="foto1.png" alt="Fotografía 1">
+        <div class="info">
+            <h3>Fotografía 1</h3>
+            <p>Descripción de la fotografía 1.</p>
+        </div>
+    </div>
+
+    <!-- Segundo Proyecto -->
+    <div class="gallery-item">
+        <img src="foto2.png" alt="Diseño Gráfico 2">
+        <div class="info">
+            <h3>Diseño Gráfico 2</h3>
+            <p>Descripción de la fotografía 2.</p>
+        </div>
+    </div>
+
+    <!-- Tercer Proyecto -->
+    <div class="gallery-item">
+        <img src="foto3.png" alt="Fotografía 3">
+        <div class="info">
+            <h3>Fotografía 3</h3>
+            <p>Descripción de la fotografía 3.</p>
+        </div>
+    </div>
+
+    <!-- Cuarto Proyecto -->
+    <div class="gallery-item">
+        <img src="foto4.png" alt="Diseño Gráfico 4">
+        <div class="info">
+            <h3>Diseño Gráfico 4</h3>
+            <p>Descripción de la fotografía 4.</p>
+        </div>
+    </div>
+
+    <!-- Quinto Proyecto -->
+    <div class="gallery-item">
+        <img src="foto5.png" alt="Fotografía 5">
+        <div class="info">
+            <h3>Fotografía 5</h3>
+            <p>Descripción de la fotografía 5.</p>
+        </div>
+    </div>
+
+    <!-- Sexto Proyecto -->
+    <div class="gallery-item">
+        <img src="foto6.png" alt="Diseño Gráfico 6">
+        <div class="info">
+            <h3>Diseño Gráfico 6</h3>
+            <p>Descripción de la fotografía 6.</p>
+        </div>
+    </div>
+</div>
+
+<div class="text-section">
+    <h2>Sobre mí</h2>
+    <p>Soy un creativo apasionado por el arte y el diseño gráfico. Mi enfoque es crear experiencias visuales que cuenten historias a través de la fotografía, el diseño y otras formas de expresión artística.</p>
+</div>
+
+<footer>
+    <p>&copy; 2024 Mi Portfolio Creativo | Todos los derechos reservados.</p>
+    <a href="mailto:tuemail@dominio.com" aria-label="Enviar un correo electrónico">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://twitter.com" target="_blank" aria-label="Sígueme en Twitter">
+        <i class="fab fa-twitter"></i>
+    </a>
+    <a href="https://www.linkedin.com" target="_blank" aria-label="Conéctate conmigo en LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://www.instagram.com" target="_blank" aria-label="Mira mis fotos en Instagram">
+        <i class="fab fa-instagram"></i>
+    </a>
+</footer>
+
+</body>
+</html>
